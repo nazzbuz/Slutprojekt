@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+body{
+  overflow-y: hidden;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url(/img/Skärmbild.jpg);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background-color: #fefefe;
+  border-radius: 2rem;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+.inre-container {
+  position: absolute;
+  width: calc(100% - 4.1rem);
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blanks {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.9s ease-in-out;
+}
+
+form {
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  transition: opacity 0.2s 0.4s;
+}
+
+form.signa-upp {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 160px;
+}
+
+
+
+.headern h2 {
+  font-size: 2rem;
+  font-weight: 580;
+  color: #151111;
+}
+
+.headern h6 {
+  color: #bababa;
+  font-weight: 400;
+  font-size: 0.75rem;
+  display: inline;
+}
+
+.vaxla {
+  color: #151111;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.vaxla:hover {
+  color: #3792e1;
+}
+
+.input {
+  position: relative;
+  height: 37px;
+  margin-bottom: 2rem;
+}
+
+.falt {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #bbb;
+  padding: 0;
+  font-size: 0.95rem;
+  color: #151111;
+  transition: 1s;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #bbb;
+  pointer-events: none;
+  transition: 0.9s;
+}
+
+.falt.active {
+  border-bottom-color: #3792e1;
+}
+
+.falt.active + label {
+  font-size: 0.7rem;
+  top: -4px;
+}
+
+.sign-knapp, .log-knapp {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: #151111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  transition: 0.5s;
+}
+
+.sign-knapp:hover, .log-knapp:hover {
+  background-color: #3792e1;
+}
+
+.termer {
+  color: #bbb;
+  font-size: 0.75rem;
+}
+
+.termer a {
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.termer a:hover {
+  color: #3792e1;
+}
+
+main.sign-up-mode form.logga-in {
+  opacity: 0;
+  pointer-events: none;
+}
+
+main.sign-up-mode form.signa-upp {
+  opacity: 1;
+  pointer-events: all;
+}
+
+main.sign-up-mode .blanks {
+  left: 55%;
+}
+
+main.sign-up-mode .glidande {
+  left: -4.5%;
+}
+
+.glidande {
+  position: absolute;
+  height: 111%;
+  width: 59.5%;
+  left: 45%;
+  top: -5.4%;
+  background-color: #3792e1;
+  border-radius: 2rem;
+  display: grid;
+  
+  
+  overflow: hidden;
+  transition: 0.9s ease-in-out;
+}
+
+.success-msg{
+  font-size: medium;
+  color: green;
+}
+
+.video {
+  width: 100%;
+}
+
+.error-msg p{
+  font-size: medium;
+  color: #ff0000;
+} 
+.success-msg p{
+    font-size: medium;
+    color: #ff0000;
+}
+.text-wrap{
+  display: none;
+}
+@media (max-width: 850px) {
+  .container {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+  }
+
+  .inre-container {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+
+  .blanks {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+    max-width: revert;
+    padding: 1.5rem 2.5rem 2rem;
+    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+  }
+
+  .headern {
+    margin: 2rem 0;
+  }
+
+  form.signa-upp .text-wrap{
+    transform: translateY(90%);
+  }
+
+  main.sign-up-mode form.logga-in  {
+    transform: translateY(-90%);
+  }
+
+  main.sign-up-mode form.signa-upp {
+    transform: translateY(0%);
+  }
+
+  .glidande {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .video-omslag {
+    display: none;
+  }
+
+  
+  .text-wrap {
+    max-height: 5rem;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  .text-wrap h2 {
+    font-weight: 580;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 530px) {
+  main {
+    padding: 0.9rem;
+  }
+
+  .container {
+    border-radius: 2rem;
+  }
+
+  .inre-container {
+    padding: 1rem;
+  }
+
+  .glidande {
+    padding: 1.5rem 1rem;
+    border-radius: 1.6rem;
+  }
+
+  .text-wrap {
+    margin-bottom: 1rem;
+  }
+
+  .text-wrap h2 {
+    font-size: 1rem;
+  }
+
+  form {
+    padding: 1rem 2rem 1.5rem;
+  }
+}
